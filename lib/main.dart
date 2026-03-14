@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(
-  MaterialApp(
-    home: Scaffold(
+void main() => runApp(MaterialApp(home: Home()));
+
+class Home extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
       appBar: AppBar(
         title: Text(
-          "hello luli",
+          "flutter starter",
           style: TextStyle(
             fontSize: 20,
             color: Colors.white,
@@ -16,17 +19,13 @@ void main() => runApp(
         centerTitle: true,
         backgroundColor: Colors.red[600],
       ),
-      body: Center(
-        child: Text(
-          "hello ninja ",
-          style: TextStyle(fontSize: 30, letterSpacing: 3.0),
-        ),
-      ),
+      body: Center(child: Image.asset("assets/Profile_-_Spider-Man.webp")),
+
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: Colors.red[600],
         child: Text("click"),
       ),
-    ),
-  ),
-);
+    );
+  }
+}
