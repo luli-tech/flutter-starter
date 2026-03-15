@@ -32,7 +32,7 @@ class NinjaCard extends StatelessWidget {
                 backgroundImage: AssetImage('assets/images.jpg'),
                 radius: 40.0,
               ),
-            ),nin
+            ),
             Divider(height: 60.0, color: Colors.grey[800]),
             Text(
               'NAME',
