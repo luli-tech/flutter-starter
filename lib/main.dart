@@ -1,30 +1,81 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(home: Home()));
+void main() => runApp(MaterialApp(home: NinjaCard()));
 
-class Home extends StatelessWidget {
+class NinjaCard extends StatelessWidget {
+  const NinjaCard({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[900],
       appBar: AppBar(
-        title: Text(
-          "flutter starter",
-          style: TextStyle(
-            fontSize: 20,
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-            fontStyle: FontStyle.italic,
-          ),
-        ),
+        title: const Text('Ninja ID Card'),
         centerTitle: true,
-        backgroundColor: Colors.red[600],
+        backgroundColor: Colors.grey[850],
+        elevation: 0.0,
+        titleTextStyle: TextStyle(
+          color: Colors.white,
+          fontSize: 20.0,
+          fontWeight: FontWeight.bold,
+        ),
       ),
-      body: Center(child: Image.asset("assets/Profile_-_Spider-Man.webp")),
-
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: Colors.red[600],
-        child: Text("click"),
+      body: Padding(
+        padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/images.jpg'),
+                radius: 40.0,
+              ),
+            ),nin
+            Divider(height: 60.0, color: Colors.grey[800]),
+            Text(
+              'NAME',
+              style: TextStyle(color: Colors.grey, letterSpacing: 2.0),
+            ),
+            SizedBox(height: 10.0),
+            Text(
+              'Chun-Li',
+              style: TextStyle(
+                color: Colors.amberAccent[200],
+                letterSpacing: 2.0,
+                fontSize: 28.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 30.0),
+            Text(
+              'CURRENT NINJA LEVEL',
+              style: TextStyle(color: Colors.grey, letterSpacing: 2.0),
+            ),
+            SizedBox(height: 10.0),
+            Text(
+              '8',
+              style: TextStyle(
+                color: Colors.amberAccent[200],
+                letterSpacing: 2.0,
+                fontSize: 28.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 30.0),
+            Row(
+              children: [
+                Icon(Icons.email, color: Colors.grey[400]),
+                SizedBox(width: 10.0),
+                Text(
+                  'chunli@example.com',
+                  style: TextStyle(color: Colors.grey[400], fontSize: 16.0),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
